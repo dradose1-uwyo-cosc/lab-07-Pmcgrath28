@@ -3,7 +3,7 @@
 # Submission Date: 10/31/2024
 # Lab 07
 # Lab Section: 12
-# Sources, people worked with, help given to: 
+# Sources, people worked with, help given to: Ian Bullard (Helped with third part)
 # your
 # comments
 # here
@@ -110,4 +110,3 @@ while True:
                         print(final_output)
                     except ValueError:
                         print("Enter an euqation with exactly two numbers.")
-                        
