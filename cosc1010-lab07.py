@@ -1,8 +1,8 @@
-# Your Name Here
+# Patrick McGrath
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# Submission Date: 10/31/2024
+# Lab 07
+# Lab Section: 12
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -19,7 +19,18 @@
 
 factorial = 1
 
-print(f"The result of the factorial based on the given bound is {factorial}")
+upper_bound = int(input("Enter upper bound here:"))
+while (True):
+    if upper_bound > 0:
+        for number in range(1, upper_bound + 1):
+            factorial *= number
+        print(f"The result of the factorial based on the given bound is {factorial}")
+        break
+    else:
+        print(f"The upper bound entered is not valid")
+        break
+
+
 
 print("*"*75)
 # Create a while loop that prompts a user for input of an integer values
@@ -38,6 +49,14 @@ print("*"*75)
 # The sum should start at 0 
 
 num_sum = 0 
+
+while True:
+    number = input("Input numbers to add or hit e to exit and print the sum:")
+    if number == "e":
+        break
+    else:
+        number = int(number)
+        num_sum += number
 
 print(f"Your final sum is {num_sum}")
 
@@ -59,4 +78,36 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
-        
+while True:
+    calculate = input("Enter an equation; hit x to exit:\n")
+    calculate = calculate.lower()
+    if calculate == "x":
+        break
+    else:
+        operators = ["+", "-", "/", "*", "%"]
+        found_operator = False
+        for operator in operators:
+            if operator in calculate:
+                found_operator = True
+                numbers = calculate.split(operator)
+
+                if len(numbers) == 2:
+                    try:
+                        numbers[0] = int(numbers[0].strip())
+                        numbers[1] = int(numbers[1].strip())
+
+                        match operator:
+                            case"+":
+                                final_output = numbers[0] + numbers[1]
+                            case"-":
+                                final_output = numbers[0] - numbers[1]
+                            case"/":
+                                final_output = numbers[0] / numbers[1]
+                            case"*":
+                                final_output = numbers[0] * numbers[1]
+                            case"%":
+                                final_output = numbers[0] % numbers[1]
+                        print(final_output)
+                    except ValueError:
+                        print("Enter an euqation with exactly two numbers.")
+                        
